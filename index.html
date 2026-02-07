@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIU Cover Page - Sameul & Efti</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body class="font-['Times_New_Roman'] flex flex-col sm:flex-row gap-3 sm:gap-5 p-3 sm:p-5 overflow-y-auto ">
+
+<div class="w-full sm:w-[350px] bg-white p-5 rounded-xl shadow-lg sm:overflow-y-auto">
+    <h3 class="text-center text-[#003366] font-semibold">Cover Page Maker</h3>
+    <div class="mt-2 mb-2 rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-center text-[12px] font-semibold text-amber-800">
+    Note: This is the first version, so there may be bugs on mobile devices. For best experience, use a desktop or laptop to generate the PDF.
+    </div>
+    
+
+     <div class="mb-3">
+        <label class="block text-[13px] font-bold mb-1">Page Title</label>
+        <select id="i_title" class="w-full px-2 py-2 border border-gray-300 rounded-md bg-white">
+            <option value="Theory Assignment">Theory Assignment</option>
+            <option value="Lab Assignment Report">Lab Assignment Report</option>
+            <option value="Lab Report">Lab Report</option>
+            <option value="Lab Final Report">Lab Final Report</option>
+        </select>
+    </div>
+    <div class="mb-3"><label class="block text-[13px] font-bold mb-1">Semester</label><input type="text" id="i_sem" class="w-full px-2 py-2 border border-gray-300 rounded-md"></div>
+    <div class="mb-3"><label class="block text-[13px] font-bold mb-1">Student Name</label><input type="text" id="i_name" class="w-full px-2 py-2 border border-gray-300 rounded-md"></div>
+    <div class="mb-3"><label class="block text-[13px] font-bold mb-1">Student ID</label><input type="text" id="i_id" class="w-full px-2 py-2 border border-gray-300 rounded-md"></div>
+    
+    <div class="flex gap-2.5">
+        <div class="mb-3 flex-1"><label class="block text-[13px] font-bold mb-1">Batch</label><input type="text" id="i_batch" class="w-full px-2 py-2 border border-gray-300 rounded-md"></div>
+        <div class="mb-3 flex-1"><label class="block text-[13px] font-bold mb-1">Section</label><input type="text" id="i_sec" class="w-full px-2 py-2 border border-gray-300 rounded-md"></div>
+    </div>
+
+    <div class="mb-3"><label class="block text-[13px] font-bold mb-1">Course Code</label><input type="text" id="i_code" class="w-full px-2 py-2 border border-gray-300 rounded-md"></div>
+    <div class="mb-3"><label class="block text-[13px] font-bold mb-1">Course Name</label><input type="text" id="i_cname" class="w-full px-2 py-2 border border-gray-300 rounded-md"></div>
+    <div class="mb-3"><label class="block text-[13px] font-bold mb-1">Teacher Name</label><input type="text" id="i_tname" class="w-full px-2 py-2 border border-gray-300 rounded-md"></div>
+    <div class="mb-3"><label class="block text-[13px] font-bold mb-1">Designation</label><input type="text" id="i_desig" class="w-full px-2 py-2 border border-gray-300 rounded-md"></div>
+    <div class="mb-3"><label class="block text-[13px] font-bold mb-1">Submission Date</label><input type="text" id="i_date" class="w-full px-2 py-2 border border-gray-300 rounded-md"></div>
+
+    <button id="download-btn" class="w-full py-4 mt-4 bg-green-600 text-white rounded-md font-bold text-base hover:bg-green-700">DOWNLOAD PDF</button>
+
+    <footer class="mt-6 pt-4 border-t border-gray-200 text-center text-xs text-gray-600">
+        <span>Developed by </span>
+        <a class="text-blue-700 hover:underline" id="dev-github" href="https://github.com/EftiMasrafi" target="_blank" rel="noopener noreferrer">Masrafi Rahman Efti</a>
+        <span> & </span>
+         <a class="text-blue-700 hover:underline" id="dev-github" href="https://github.com/sameul-hasan" target="_blank" rel="noopener noreferrer">Sameul Hasan</a>
+    </footer>
+</div>
+
+<div class="flex-1 min-w-0 flex justify-start sm:justify-center overflow-x-auto sm:overflow-x-hidden overflow-y-auto bg-[#525659] py-6 sm:py-10 px-2 sm:px-0">
+    <div id="page-to-print" class="min-w-[210mm] w-[210mm] h-[297mm] bg-white px-[20mm] py-[15mm] box-border flex flex-col text-black">
+        <div class="text-center mb-[5mm]">
+            <img id="logo-out" src="diulogoside.png" class="max-w-[280px] max-h-[100px] mb-2 mx-auto" alt="Logo">
+            <div class="text-[32px] font-normal mt-[10px] mb-[25px]" id="o_title">Theory Assignment </div>
+        </div>
+
+        <table class="w-full border-collapse mb-8">
+            <tr>
+                <th colspan="7" class="border border-black p-1.5 text-center text-sm">Only for course Teacher</th>
+            </tr>
+            <tr>
+                <td colspan="2" class="border border-black p-1.5 text-center text-sm w-[30%]"></td>
+                <td class="border border-black p-1.5 text-center text-sm font-bold">Needs Improvement</td>
+                <td class="border border-black p-1.5 text-center text-sm font-bold">Developing</td>
+                <td class="border border-black p-1.5 text-center text-sm font-bold">Sufficient</td>
+                <td class="border border-black p-1.5 text-center text-sm font-bold">Above Average</td>
+                <td class="border border-black p-1.5 text-center text-sm font-bold">Total Mark</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="border border-black p-1.5 text-center text-sm font-bold">Allocate mark & Percentage</td>
+                <td class="border border-black p-1.5 text-center text-sm">25%</td>
+                <td class="border border-black p-1.5 text-center text-sm">50%</td>
+                <td class="border border-black p-1.5 text-center text-sm">75%</td>
+                <td class="border border-black p-1.5 text-center text-sm">100%</td>
+                <td class="border border-black p-1.5 text-center text-sm">5</td>
+            </tr>
+            <tr>
+                <td class="border border-black p-1.5 text-sm text-left pl-2.5 font-bold">Clarity</td>
+                <td class="border border-black p-1.5 text-center text-sm font-bold w-[40px]">1</td>
+                <td class="border border-black p-1.5 text-center text-sm"></td>
+                <td class="border border-black p-1.5 text-center text-sm"></td>
+                <td class="border border-black p-1.5 text-center text-sm"></td>
+                <td class="border border-black p-1.5 text-center text-sm"></td>
+                <td class="border border-black p-1.5 text-center text-sm"></td>
+            </tr>
+            <tr>
+                <td class="border border-black p-1.5 text-sm text-left pl-2.5 font-bold">Content Quality</td>
+                <td class="border border-black p-1.5 text-center text-sm font-bold">2</td>
+                <td class="border border-black p-1.5 text-center text-sm"></td>
+                <td class="border border-black p-1.5 text-center text-sm"></td>
+                <td class="border border-black p-1.5 text-center text-sm"></td>
+                <td class="border border-black p-1.5 text-center text-sm"></td>
+                <td class="border border-black p-1.5 text-center text-sm"></td>
+            </tr>
+            <tr>
+                <td class="border border-black p-1.5 text-sm text-left pl-2.5 font-bold">Spelling & Grammar</td>
+                <td class="border border-black p-1.5 text-center text-sm font-bold">1</td>
+                <td class="border border-black p-1.5 text-center text-sm"></td>
+                <td class="border border-black p-1.5 text-center text-sm"></td>
+                <td class="border border-black p-1.5 text-center text-sm"></td>
+                <td class="border border-black p-1.5 text-center text-sm"></td>
+                <td class="border border-black p-1.5 text-center text-sm"></td>
+            </tr>
+            <tr>
+                <td class="border border-black p-1.5 text-sm text-left pl-2.5 font-bold">Organization and Formatting</td>
+                <td class="border border-black p-1.5 text-center text-sm font-bold">1</td>
+                <td class="border border-black p-1.5 text-center text-sm"></td>
+                <td class="border border-black p-1.5 text-center text-sm"></td>
+                <td class="border border-black p-1.5 text-center text-sm"></td>
+                <td class="border border-black p-1.5 text-center text-sm"></td>
+                <td class="border border-black p-1.5 text-center text-sm"></td>
+            </tr>
+            <tr>
+                <td colspan="6" class="border border-black p-1.5 text-right pr-4 text-sm font-bold">Total obtained mark</td>
+                <td class="border border-black p-1.5 text-center text-sm"></td>
+            </tr>
+            <tr class="h-[80px]">
+                <td colspan="2" class="border border-black p-1.5 text-center text-sm font-bold">Comments</td>
+                <td colspan="5" class="border border-black p-1.5 text-center text-sm"></td>
+            </tr>
+        </table>
+
+        <div class="w-full text-[20px] leading-[1.8] mt-2.5">
+            <div class="flex w-full mb-1"><span class="font-bold w-[200px] inline-block whitespace-nowrap">Semester:</span><span class="font-bold flex-1 text-left" id="o_sem"></span></div>
+            <div class="flex w-full mb-1"><span class="font-bold w-[200px] inline-block whitespace-nowrap">Student Name:</span><span class="font-bold flex-1 text-left" id="o_name"></span></div>
+            <div class="flex w-full mb-1"><span class="font-bold w-[200px] inline-block whitespace-nowrap">Student ID:</span><span class="font-bold flex-1 text-left" id="o_id"></span></div>
+            
+            <div class="flex w-full mb-1">
+                <div class="flex w-1/2"><span class="font-bold w-[200px] inline-block whitespace-nowrap">Batch:</span><span class="font-bold flex-1 text-left" id="o_batch"></span></div>
+                <div class="flex w-1/2"><span class="font-bold max-w-[200px] inline-block">Section:</span><span class="font-bold flex-1 text-left" id="o_sec"></span></div>
+            </div>
+
+            <div class="flex w-full mb-1">
+                <div class="flex w-1/2"><span class="font-bold w-[200px] inline-block whitespace-nowrap">Course Code:</span><span class="font-bold flex-1 text-left" id="o_code"></span></div>
+                <div class="flex w-1/2"><span class="font-bold max-w-[200px] inline-block ">Course Name:</span><span class="font-bold flex-1 text-left" id="o_cname"></span></div>
+            </div>
+
+            <div class="flex w-full mb-1"><span class="font-bold w-[200px] inline-block whitespace-nowrap">Course Teacher Name:</span><span class="font-bold flex-1 text-left" id="o_tname"></span></div>
+            <div class="flex w-full mb-1"><span class="font-bold w-[200px] inline-block whitespace-nowrap">Designation:</span><span class="font-bold flex-1 text-left" id="o_desig"></span></div>
+            <div class="flex w-full mb-1"><span class="font-bold w-[200px] inline-block whitespace-nowrap">Submission Date:</span><span class="font-bold flex-1 text-left" id="o_date">......./......./.......</span></div>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
