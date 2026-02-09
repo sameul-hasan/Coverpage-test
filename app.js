@@ -145,13 +145,20 @@ document.addEventListener("DOMContentLoaded", () => {
         await html2pdf().set(opt).from(element).save();
       } else {
         const coverPdfBuffer = await html2pdf().set(opt).from(element).outputPdf('arraybuffer');
-        const userFileBuffer = await mergeFileInput.files[0].arrayBuffer();
         const { PDFDocument } = PDFLib;
         const mergedPdf = await PDFDocument.create();
+        
+        // Add Cover Page
         const coverDoc = await PDFDocument.load(coverPdfBuffer);
-        const userDoc = await PDFDocument.load(userFileBuffer);
         (await mergedPdf.copyPages(coverDoc, coverDoc.getPageIndices())).forEach(p => mergedPdf.addPage(p));
-        (await mergedPdf.copyPages(userDoc, userDoc.getPageIndices())).forEach(p => mergedPdf.addPage(p));
+
+        // Add Uploaded Files
+        for (const file of mergeFileInput.files) {
+           const userFileBuffer = await file.arrayBuffer();
+           const userDoc = await PDFDocument.load(userFileBuffer);
+           (await mergedPdf.copyPages(userDoc, userDoc.getPageIndices())).forEach(p => mergedPdf.addPage(p));
+        }
+        
         const blob = new Blob([await mergedPdf.save()], { type: 'application/pdf' });
         const link = document.createElement('a');
         link.href = URL.createObjectURL(blob);
