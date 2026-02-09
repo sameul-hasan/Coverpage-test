@@ -15,7 +15,7 @@
     <img src="CUL2.png" class="mx-auto mb-2 w-full" alt="Logo">
     <p class="text-center font-semibold font-sm">Academic Document & PDF Solutions for DIU Students</p>
     <div class="mt-2 mb-2 rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-center text-[12px] font-semibold text-amber-800">
-    Note: Version 1.6 - Profile Saving Enabled
+    Note: Version 1.8 - Profile Saving , Multipal PDFs, Responsive Enabled
     </div>
     
     <div class="mb-3">
@@ -44,8 +44,8 @@
     <div class="mb-3"><label class="block text-[13px] font-bold mb-1">Submission Date</label><input type="text" id="i_date" class="w-full px-2 py-2 border border-gray-300 rounded-md"></div>
 
     <div class="mb-3 p-3 bg-blue-50 border border-blue-200 rounded-md">
-        <label class="block text-[13px] font-bold mb-1 text-blue-800">Attach Assignment PDF (Optional)</label>
-        <input type="file" id="i_merge_pdf" accept="application/pdf" class="text-xs w-full">
+        <label class="block text-[13px] font-bold mb-1 text-blue-800">Attach Assignment PDFs (Optional)</label>
+        <input type="file" id="i_merge_pdf" accept="application/pdf" multiple class="text-xs w-full">
     </div>
 
     <div class="flex gap-2 mb-3">
@@ -133,7 +133,7 @@
                 <div class="flex w-1/2 min-w-[200px]"><span class="font-bold w-[210px] shrink-0">Course Name: </span><span class="font-bold flex-1 text-left break-words" id="o_cname"></span></div>
             </div>
 
-            <div class="flex w-full mb-1"><span class="font-bold w-[300px] shrink-0">Course Teacher Name: </span><span class="font-bold flex-1 text-left break-words" id="o_tname"></span></div>
+            <div class="flex w-full mb-1"><span class="font-bold w-[3000px] shrink-0">Course Teacher Name: </span><span class="font-bold flex-1 text-left break-words" id="o_tname"></span></div>
             <div class="flex w-full mb-1"><span class="font-bold w-[210px] shrink-0">Designation: </span><span class="font-bold flex-1 text-left" id="o_desig"></span></div>
             <div class="flex w-full mb-1"><span class="font-bold w-[210px] shrink-0">Submission Date: </span><span class="font-bold flex-1 text-left" id="o_date">......./......./.......</span></div>
         </div>
@@ -145,4 +145,3 @@
 <script src="app.js"></script>
 </body>
 </html>
-
